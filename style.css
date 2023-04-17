@@ -1,0 +1,148 @@
+body{
+    background-color: rgb(241, 241, 234);
+    margin: 0;
+    font-size: 20px;
+}
+/*section container*/
+.container{
+        background-color: rgb(219, 217, 196);
+        display: flex; /*ειναι flexible*/
+        flex-direction: row;/*να ειναι τα στοιχεια που περιλαμβανει μεσα σε μια γραμμη */
+        flex-flow: wrap; /*να εκτεινονται σε παραπανω απο 1 γραμμη αν χρειαστει */
+        justify-content: center; /*ολα τα στοιχεια να μοιραζονται στο κεντρο */
+       
+}
+ul {
+    margin: 0;
+    list-style: none;/*για να μην υπαρχουν οι κουκιδες*/
+    display: flex; /*για να ειναι flexible και τα στοιχεια της λιστας */
+    
+   
+   
+}
+.container a {
+    text-decoration: none; /*για να μην ειναι υπογραμμισμενα*/
+    display: block; 
+    padding: 1em;
+    color: #161515;
+
+}
+.container a:hover{ /*οταν κανω hover over πανω απο τα list items*/
+    color: rgb(77, 21, 8);
+}
+
+@media all and (max-width: 768px) { /*αν φτασεις σε ενα σημειο 800px θελω ...*/
+    .navigation { /*ολο το navigation...*/
+        justify-content: space-around; /*να εχει space-around στοιχιση-->θα πιανουν ολα τον ιδιο χωρο και θα μοιραζονται το ιδιο τον χωρο */
+    }
+}
+@media all and (max-width: 576px) {/*αν πεσεις στα 600 px*/
+    .container {
+        flex-direction: column;/*θελω τα στοιχεια να γινουν στιβαγμενα το ενα κατω απο το αλλο */
+        flex-wrap: wrap;/*το container θα λαβει και περισσοτερη απο 1 γραμμη αν χρειαστει */
+        padding: 0;
+    }
+
+    .container a { /*ολα τα <α>*/
+        text-align: center; /*θα εχουν κεντρικη στοιχιση*/
+        padding: 10px; /*αποστασεις 10px μεταξυ τους */
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .container li:last-of-type a { /*το τελευταιο στοιχειο της λιστας */
+        border-bottom: none; /*δεν θα υπαρχει γραμμη κατω απο την τελευταια γραμμη πλοηγησης*/
+    }}
+    
+   /*section main*/
+   .container-photos{
+
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  
+   }
+   img{
+    width: 300px;
+    height: 300px;
+    
+   }
+   .imgs{
+    width: 50vw;
+    padding: 20px;
+   
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    column-gap: 20px
+    
+
+   }
+   @media all and (max-width: 576px){/*gia mikri othoni*/
+    img{
+        width: 60px;
+        height:20px;
+        
+   }
+   .imgs{
+    
+    align-items: center;/*καθετη στοιχιση στο κεντρο*/
+    flex-direction: column; /*τα στοιχεια να εμφανιζονται ως στηλη*/
+    flex-wrap: wrap; /*εαν χρειαστει να καταλαμβανουν και παραπανω γραμμες,στηλες*/
+    column-gap: 20px;
+    width: 50vw;
+   }
+  
+}
+@media all and (max-width: 768px){/*gia tablet*/
+    .imgs{
+        width: 50vw;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    img{
+        width: 50vw;
+        height:50vh;
+        
+   }
+
+}
+@media all and (max-width: 992px){/*gia laptop*/
+    .imgs{
+        width: 50vw;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        row-gap: 20px;
+    }
+    img{
+        width: 50vw;
+        height:50vh;
+        
+   }
+
+}
+@media all and (max-width: 1200px){/*gia desktop*/
+    .imgs{
+        
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        row-gap: 20px;
+    }
+    img{
+        width: 50vw;
+        height:50vh;
+        
+   }
+
+}
+
